@@ -12,5 +12,5 @@ variables:
 - template: variables.yml
 
 stages:
-- template: ci.yml
-- template: cd.yml
+- template: stages/ci.yml
+- template: stages/cd.yml
