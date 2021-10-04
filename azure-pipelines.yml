@@ -5,9 +5,6 @@
 trigger:
 - main
 
-resources:
-- repo: self
-
 variables: 
 - template: variables.yml
 
