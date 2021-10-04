@@ -1,0 +1,15 @@
+variables:
+
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: '83d26616-c80c-4ff5-9172-a850c03dce22'
+  imageRepository: 'teomarcdhiotestingazurepipeline'
+  containerRegistry: 'acraksmatteo.azurecr.io'
+  dockerfilePath: '**/Dockerfile'
+  tag: '$(Build.BuildId)'
+  imagePullSecret: 'rp/3so6MNLvD30AeO21SldxacrBIcJpM'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+  # Name of the new namespace being created to deploy the PR changes.
+  k8sNamespaceForPR: 'review-app-$(System.PullRequest.PullRequestId)'
