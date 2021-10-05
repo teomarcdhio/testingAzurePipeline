@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: teomarcdhiotestingazurepipeline 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: teomarcdhiotestingazurepipeline
+  template:
+    metadata:
+      labels:
+        app: teomarcdhiotestingazurepipeline 
+    spec:
+      containers:
+        - name: teomarcdhiotestingazurepipeline 
+          image: acraksmatteo.azurecr.io/teomarcdhiotestingazurepipeline
+          ports:
+          - containerPort: 80
