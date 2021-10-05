@@ -27,7 +27,6 @@ stages:
               action: deploy
               manifests: |
                 $(Pipeline.Workspace)/$(manifestName)
-                $(Pipeline.Workspace)/$(manifestName)
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
