@@ -15,7 +15,7 @@ stages:
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          $(tag)
+          $(manifestName)
 
     
     - bash: echo '##vso[task.setvariable variable=manifestName]$(manifestName)'
