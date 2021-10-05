@@ -29,7 +29,7 @@ stages:
 
     - task: CmdLine@2
       inputs:
-        script: ren $(build.artifactstagingdirectory)\azure-vote-all-in-one-redis.yml
+        script: rename $(build.artifactstagingdirectory)\azure-vote-all-in-one-redis.yml
           $(build.artifactstagingdirectory)\$(manifestName)
 
 
