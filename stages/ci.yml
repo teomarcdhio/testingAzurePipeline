@@ -34,8 +34,8 @@ stages:
 
     
 
-    - upload: $(manifestName)
-      artifact: $(manifestName)
+    - upload: azure-vote-all-in-one-redis.yml
+      artifact: azure-vote-all-in-one-redis.yml
 
     - task: PowerShell@2
       displayName: 'Copy Specific Config'
