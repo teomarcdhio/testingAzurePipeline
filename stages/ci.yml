@@ -25,7 +25,13 @@ stages:
       displayName: 'Rename manifest'
       inputs: 
         contents: 'azure-vote-all-in-one-redis.yml'
-        TargetFolder: $(build.artifactstagingdirectory)\'$(manifestName)'
+        TargetFolder: $(build.artifactstagingdirectory)\
+
+    - task: CmdLine@2
+      inputs:
+        script: ren $(build.artifactstagingdirectory)\azure-vote-all-in-one-redis.yml
+          $(build.artifactstagingdirectory)\$(manifestName)
+
 
     - upload: $(manifestName)
       artifact: $(manifestName)
