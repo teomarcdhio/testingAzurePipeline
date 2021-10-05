@@ -18,7 +18,7 @@ stages:
           $(tag)
 
     
-    - bash: echo '##vso[task.setvariable variable=manifestName]$Build.BuildId'
+    - bash: echo '##vso[task.setvariable variable=manifestName]voteap_$Build.BuildId_$dateStr.yml'
       displayName: Set new variable value for the manifestName
 
     - task: CopyFiles@2
@@ -27,11 +27,16 @@ stages:
         contents: 'azure-vote-all-in-one-redis.yml'
         TargetFolder: $(build.artifactstagingdirectory)\
 
-    - task: CmdLine@2
-      inputs:
-        script: REN $(build.artifactstagingdirectory)\azure-vote-all-in-one-redis.yml
-          $(build.artifactstagingdirectory)\$(manifestName).yml
+    # - task: CmdLine@2
+    #   inputs:
+    #     script: ren $(build.artifactstagingdirectory)\azure-vote-all-in-one-redis.yml
+    #       $(build.artifactstagingdirectory)\$(manifestName)
 
+    - task: PowerShell@2
+      displayName: 'Copy Specific Config'
+      inputs:
+        targetType: inline
+        script: Copy-Item -Path "$(build.artifactstagingdirectory)\azure-vote-all-in-one-redis.yml" -Destination "$(build.artifactstagingdirectory)\$(manifestName)"
 
     - upload: $(manifestName)
       artifact: $(manifestName)
