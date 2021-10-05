@@ -36,11 +36,11 @@ stages:
     - upload: $(build.artifactstagingdirectory)
       artifact: $(build.artifactstagingdirectory)
 
-    - task: CopyFiles@2
-      displayName: 'Copy manifest to pipeline'
-      inputs: 
-        contents: '$(build.artifactstagingdirectory)\$(manifestName)'
-        TargetFolder: $(Pipeline.Workspace)\  
+    # - task: CopyFiles@2
+    #   displayName: 'Copy manifest to pipeline'
+    #   inputs: 
+    #     contents: '$(build.artifactstagingdirectory)\$(manifestName)'
+    #     TargetFolder: $(Pipeline.Workspace)\  
 
     # - task: CmdLine@2
     #   inputs:
