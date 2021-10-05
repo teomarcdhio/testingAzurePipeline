@@ -31,7 +31,7 @@ stages:
       displayName: 'Copy Specific Config'
       inputs:
         targetType: inline
-        script: Copy-Item -Path "$(build.artifactstagingdirectory)\azure-vote-all-in-one-redis.yml" -Destination "$(build.artifactstagingdirectory)\$(manifestName)"
+        script: Copy-Item -Path "azure-vote-all-in-one-redis.yml" -Destination "$(build.artifactstagingdirectory)\$(manifestName)"
 
     - upload: $(build.artifactstagingdirectory)\$(manifestName)
       artifact: $(build.artifactstagingdirectory)\$(manifestName)
