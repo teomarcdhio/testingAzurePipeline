@@ -6,6 +6,7 @@ variables:
   containerRegistry: 'acraksmatteo.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
+  date: '$(Date:yyyyMMdd)'
   imagePullSecret: 'acraksmatteof2a8-auth'
 
   # Agent VM image name
