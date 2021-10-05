@@ -25,7 +25,15 @@ stages:
     #   displayName: 'Rename manifest'
     #   inputs: 
     #     contents: 'azure-vote-all-in-one-redis.yml'
-    #     TargetFolder: $(build.artifactstagingdirectory)\
+    #     TargetFolder: $(build.artifactstagingdirectory)\   
+    - task: PowerShell@2
+      displayName: 'Copy Specific Config'
+      inputs:
+        targetType: inline
+        script: Copy-Item -Path "azure-vote-all-in-one-redis.yml" -Destination "$(build.artifactstagingdirectory)\$(manifestName)"
+
+    - upload: $(build.artifactstagingdirectory)\$(manifestName)
+      artifact: $(build.artifactstagingdirectory)\$(manifestName)
 
     # - task: CmdLine@2
     #   inputs:
@@ -33,12 +41,3 @@ stages:
     #       $(build.artifactstagingdirectory)\$(manifestName)
 
     
-
-    - upload: azure-vote-all-in-one-redis.yml
-      artifact: azure-vote-all-in-one-redis.yml
-
-    - task: PowerShell@2
-      displayName: 'Copy Specific Config'
-      inputs:
-        targetType: inline
-        script: Copy-Item -Path "$(build.artifactstagingdirectory)\azure-vote-all-in-one-redis.yml" -Destination "$(build.artifactstagingdirectory)\$(manifestName)"
