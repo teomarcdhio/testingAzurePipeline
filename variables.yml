@@ -7,7 +7,7 @@ variables:
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   manifestdate: '$(pipeline.startTime)'
-  manifestName: 'voteap_$(Build.BuildId)_$(manifestdate).yml'
+  manifestName: 'voteap_$(Build.BuildId).yml'
   imagePullSecret: 'acraksmatteof2a8-auth'
 
   # Agent VM image name
