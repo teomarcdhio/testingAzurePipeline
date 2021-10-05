@@ -9,7 +9,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'teomarcdhiotestingAzurePipeline.default'
+    environment: 'teomarcdhiotestingAzurePipeline-3232.default'
     strategy:
       runOnce:
         deploy:

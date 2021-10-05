@@ -1,12 +1,12 @@
 variables:
 
-  # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '83d26616-c80c-4ff5-9172-a850c03dce22'
+   # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: '8ac7db95-1abb-464f-8c88-fe95a8110cc6'
   imageRepository: 'teomarcdhiotestingazurepipeline'
   containerRegistry: 'acraksmatteo.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: '4LFLu1Jb7ErACn8rBXLe2I0=fNtNsR7R'
+  imagePullSecret: 'acraksmatteof2a8-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
