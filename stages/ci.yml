@@ -33,8 +33,8 @@ stages:
         targetType: inline
         script: Copy-Item -Path "azure-vote-all-in-one-redis.yml" -Destination "$(build.artifactstagingdirectory)\$(manifestName)"
 
-    - upload: $(build.artifactstagingdirectory)\$(manifestName)
-      artifact: $(build.artifactstagingdirectory)\$(manifestName)
+    - upload: $(build.artifactstagingdirectory)
+      artifact: $(build.artifactstagingdirectory)
 
     # - task: CmdLine@2
     #   inputs:
