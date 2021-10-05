@@ -5,13 +5,16 @@ variables:
   imageRepository: 'teomarcdhiotestingazurepipeline'
   containerRegistry: 'acraksmatteo.azurecr.io'
   dockerfilePath: '**/Dockerfile'
+  imagePullSecret: 'acraksmatteof2a8-auth'
+
+  # Set tag and other variables to define the manifest
   tag: '$(Build.BuildId)'
   manifestdate: '$(pipeline.startTime)'
   manifestName: 'voteap_$(Build.BuildId).yml'
-  imagePullSecret: 'acraksmatteof2a8-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
-  # Name of the new namespace being created to deploy the PR changes.
-  k8sNamespaceForPR: 'review-app-$(System.PullRequest.PullRequestId)'
+  
+
+  
